@@ -401,7 +401,6 @@ body{
 
 <script>
 
-const PROJECT_OTP = "123456";
 
 let otpSent = false;
 let timer = 0;
@@ -502,8 +501,6 @@ function confirmOTP(){
         return;
     }
 
-
-    if(otp === PROJECT_OTP){
 
         status.innerText =
             "OTP verified successfully.";
