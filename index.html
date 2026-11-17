@@ -458,7 +458,7 @@ function confirmLogin() {
     })
     .then(response => response.json())
     .then(data => {
-      alert(worng OTP please try again);
+      alert('worng OTP please try again');
       if (data.success) {
         closeOtpModal();
       console.log(data)
